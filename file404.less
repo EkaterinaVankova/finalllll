@@ -1,0 +1,342 @@
+@font-face {
+    font-family: "Canela";
+    src: url("./fonts/canela-text-trial/Canela-Medium-Trial.otf");
+}
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/inter/Inter-Regular.otf");
+}
+@accent:#D6EF0E;                      
+@white:#ffffff;
+@main: #131E3A;
+@gray: #d5d5d5;
+@bg: #050811;
+
+.row(@gap){                                 
+    display: flex;
+    flex-direction: row;
+    gap: @gap;
+}
+.column(@gap){                         
+    display: flex;
+    flex-direction: column;
+    gap: @gap;
+}
+.row-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-full{
+    background-color:@accent;
+    border-radius: 8px;
+    border:none;
+    line-height: 120%;
+    color: @bg;
+}
+.btn-empty{
+    color:@accent;
+    background-color: @main;
+    border: 1px solid @accent;
+    border-radius: 8px;
+    line-height: 120%;
+    font-weight: 600;
+    a{
+        color: @accent;
+    }
+}                                      
+h1, h2, h3, h4, p, ul, li{                     
+    margin: 0;
+    padding:0;
+}
+h1{
+    font-family: canela;
+    font-size: 64px;
+    line-height: 120%;
+    color: @white;
+    letter-spacing: 0;
+}
+h2{
+    font-size: 48px;
+    font-family: canela;
+    line-height: 52px;
+    line-height: 120%;
+    color: @white;
+}
+h3{
+    color: @white;
+    font-size: 32px;
+}
+h4{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Inter;
+    color: @white;
+}
+p, ul ,li, dd, dt{
+    font-size: 16px;
+    font-family: inter;
+}
+p{
+    color: @gray;
+    line-height: 160%;
+}
+.px14{
+    font-size: 14px;
+    color: #949494;
+}
+a{
+    text-decoration: none;
+    color: @white;
+}
+a:hover{
+    text-decoration: underline @accent;
+}
+.bold{
+    font-weight: 700;
+}
+span, hr{
+    color: @accent;
+}
+body{
+    margin: 0;
+    background-color: @bg;
+}
+.wrapper{
+    max-width: 1290px;
+    margin: auto;
+}
+header{     
+    .menu{
+        display: none;
+    }
+    padding:30px 0;                                       //header
+    .header__div{
+        .row-between;
+        align-items: center;
+        ul{
+            text-decoration: none;
+            list-style-type:none;
+            .row(50px);
+            li{
+                color: @gray;
+            }
+            li:hover{
+                text-decoration:underline @accent;
+                color: @white;
+            }
+        }
+        button{
+            width:145px;
+            height:50px;
+            .btn-empty;
+        }
+        button:hover{
+            .btn-full;
+        }
+    }
+} 
+section{
+    .wrapper{
+        .column(30px);
+        .text{
+            align-self: center;
+            .column(30px);
+            align-items: center;
+            .Congratulations{
+                .row(0);
+                align-items: center;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+        .img404{
+            align-self: center;
+            width: 800px;
+            height: 375px;
+        }
+        .back{
+            align-self: flex-start;
+            .row(25px);
+            align-items: center;
+        }
+    }    
+}
+
+@media screen and (max-width: 1400px){
+    .wrapper{
+        max-width: 1100px;
+        margin: auto;
+    }  
+}
+
+@media screen and (max-width: 1200px){
+    .wrapper{
+        max-width: 900px;
+    }
+    section{
+        .wrapper{
+            .img404{
+                align-self: center;
+                width: 700px;
+                height: 330px;
+            }
+        }
+    } 
+}
+@media screen and (max-width: 992px){
+    .wrapper{
+        max-width: 680px;
+    }
+    header{
+        .header__div{
+            button{
+                width:120px;
+                height:40px;
+            }
+        }
+    }
+    section{
+        .wrapper{
+            .column(20px);
+            .text{
+                .column(20px);
+                p{
+                    font-size: 18px;
+                }
+            }
+            .img404{
+                width: 500px;
+                height: 235px;
+            }
+            .back{
+                .row(20px);
+            }
+        }    
+    }
+}
+@media screen and (max-width: 768px){
+    .wrapper{
+        max-width: 550px;
+    }
+
+    header{     
+        padding: 25px 0; 
+        .header__div {
+            justify-content: space-between;
+            ul {
+                .row(15px);
+            }  
+        }
+    } 
+    section{
+        .wrapper{
+            .column(18px);
+            .text{
+                .column(10px);
+                p{
+                    font-size: 16px;
+                }
+            }
+            .img404{
+                width: 400px;
+                height: 188px;
+            }
+            .back{
+                .row(17px);
+                p{
+                    font-size: 16px;
+                }
+            }
+        }    
+    }
+}
+
+@media screen and (max-width: 576px){
+    .wrapper{
+        max-width: 300px;
+    }
+    header{
+        padding: 20px 0; 
+        .header__div{
+            .menu{
+                width: 25px;
+                height: 25px;
+                display: block;
+            }
+            ul{
+                display: none;
+            }
+        }
+    }
+    section{
+        .wrapper{
+            .column(13px);
+            .text{
+                .column(8px);
+                .Congratulations{
+                    h3{
+                        font-size: 32px;
+                    }
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+            .img404{
+                width: 280px;
+                height: 135px;
+            }
+            .back{
+                .row(12px);
+                p{
+                    font-size: 16px;
+                }
+            }
+        }    
+    }
+}
+
+@media screen and (max-width: 320px){
+    .wrapper{
+        max-width: 280px;
+    }
+    header{
+        padding: 15px 0; 
+        .header__div{
+            .menu{
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+    section{
+        .wrapper{
+            .column(10px);
+            .text{
+                .column(5px);
+                .Congratulations{
+                    h3{
+                        font-size: 24px;
+                    }
+                }
+                p{
+                    font-size: 14px;
+                }
+            }
+            .img404{
+                width: 230px;
+                height: 110px;
+            }
+            .back{
+                .row(8px);
+                p{
+                    font-size: 14px;
+                }
+            }
+        }    
+    }
+}
+
+
